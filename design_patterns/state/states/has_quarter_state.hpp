@@ -1,12 +1,11 @@
 #pragma once
-#include "../gumball_machine.hpp"
 #include "../state.hpp"
 #include <chrono>
 #include <random>
 
 class HasQuarterState : public State {
 public:
-  HasQuarterState(std::shared_ptr<GumballMachine> gumballMachine) : State(gumballMachine) {
+  HasQuarterState(GumballMachine *gumballMachine) : State(gumballMachine) {
     rng.seed(std::chrono::system_clock::now().time_since_epoch().count());
   }
   void ejectQuarter() override;

@@ -1,11 +1,10 @@
 #pragma once
 #include <iostream>
-#include <memory>
 
 class GumballMachine;
 class State {
 public:
-  State(std::shared_ptr<GumballMachine> gumballMachine) : gumballMachine(gumballMachine) {}
+  State(GumballMachine *gumballMachine) : gumballMachine(gumballMachine) {}
   virtual ~State() = default;
 
   virtual void insertQuarter() {
@@ -22,5 +21,5 @@ public:
   }
 
 protected:
-  std::shared_ptr<GumballMachine> gumballMachine;
+  GumballMachine *gumballMachine;
 };
