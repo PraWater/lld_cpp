@@ -7,11 +7,11 @@ Implementing all the design patterns from the book [Head First Design Patterns](
 ### Running the code
 ```bash
 cd design_patterns/${pattern_name}
-g++ **.[ch]pp
+fd -e cpp -e hpp -X g++
 ./a.out
 ```
 
 ### Cleanup
 ```bash
-rm a.out **.gch
+fd -e out -e gch -I -x rm
 ```
